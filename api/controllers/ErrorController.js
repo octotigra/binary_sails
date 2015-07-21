@@ -5,6 +5,6 @@ module.exports = {
     },
 
 	visibleError: function(req, res) {
-        return res.view( "Ooops" )
+        return res.view("bad", {message: "Ooops"});
     },
 };
