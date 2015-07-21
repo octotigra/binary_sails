@@ -31,12 +31,13 @@ module.exports = {
 	},
 
 	add: function(req, res)	 {
+		
 		var person = {    
             
-            Name: req.body.Name, 
-            Grade: req.body.Grade
+            name: req.body.name, 
+            grade: req.body.grade
         };
-        
+      
         Students.create(person).exec(function(err, result){
             if (err) {
             	return res.send(err);
@@ -52,11 +53,11 @@ module.exports = {
 		 
 		 Students.findOne({where: {id: req.param('id')}}).exec(function(err, result){
             
-            result.Name = req.body.Name;
-            result.Grade = req.body.Grade;
+            result.name = req.body.name;
+            result.grade = req.body.grade;
             result.save(function(error) {
             
-            if (error) {
+            if (err) {
             	return res.send(err);
             }
             return res.send("Success");
@@ -67,14 +68,15 @@ module.exports = {
 	},
 
 	remove: function(req, res)	 {
-		Students.destroy({id: req.param('id')}).exec(function(err, result) {
-           
-		if (err) {
+
+        Students.destroy({id: req.param('id')}).exec(function(err) {
+        
+        if (err) {
             return res.send(err);
         }   
         return res.send("Success");
-        
-        }); 
+
+        });
 		
 	}
 };

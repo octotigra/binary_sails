@@ -7,13 +7,18 @@
 
 module.exports = {
 
-  connection: 'someMysqlServer', 
+  connection: 'someMysqlServer',
+  schema: true,
 
   attributes: {
   		
   		id: {
-  			type: 'string',
-    		autoIncrement: true
+  			
+    		autoIncrement: true,
+    		type: 'integer',
+        	
+        	primaryKey: true,
+        	unique: true
   		},
 
   		name: {
