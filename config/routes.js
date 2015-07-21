@@ -43,10 +43,10 @@ module.exports.routes = {
   'get /showerror': 'ErrorController.visibleError',
   
   'get /blueprint': 'StudentsController.find',
-  'get /blueprint/:id': 'StudentsController.findOne',
+  'get /blueprint/:id?': 'StudentsController.findOne',
   'post /blueprint': 'StudentsController.create',
-  'put /blueprint/:id': 'StudentsController.update',
-  'delete /blueprint/:id': 'StudentsController.destroy',
+  'put /blueprint/:id?': 'StudentsController.update',
+  'delete /blueprint/:id?': 'StudentsController.destroy',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
