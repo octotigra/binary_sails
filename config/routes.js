@@ -33,14 +33,20 @@ module.exports.routes = {
   ***************************************************************************/
 
   'get /students': 'StudentsController.getAll',
-  'get /students/:id': 'StudentsController.get',
+  'get /students/:id?': 'StudentsController.get',
   'post /students': 'StudentsController.add',
-  'put /students/:id': 'StudentsController.update',
-  'delete /students/:id': 'StudentsController.remove',
+  'put /students/:id?': 'StudentsController.update',
+  'delete /students/:id?': 'StudentsController.remove',
   
 
   'get /error': 'ErrorController.error',
   'get /showerror': 'ErrorController.visibleError',
+  
+  'get /blueprint': 'StudentsController.find',
+  'get /blueprint/:id': 'StudentsController.findOne',
+  'post /blueprint': 'StudentsController.create',
+  'put /blueprint/:id': 'StudentsController.update',
+  'delete /blueprint/:id': 'StudentsController.destroy',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
